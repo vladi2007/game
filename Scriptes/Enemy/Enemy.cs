@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] int healthPoint = 100;
     player player;
     void Start() => player = FindObjectOfType<player>();
-
     void Update()
     {
         GoToPlayer();

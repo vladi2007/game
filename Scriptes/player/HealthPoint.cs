@@ -7,10 +7,9 @@ public class HealthPoint : MonoBehaviour
 {
     [SerializeField] int health = 100;
     player player;
-    public Slider healthSl;
+    void Start() => player = GameObject.FindObjectOfType<player>();
     void Update()
     {
-        healthSl.value = health;
         var normalSpeed = player.speed;
         if (health <= 50)
             player.speed = player.hitSpeed;
