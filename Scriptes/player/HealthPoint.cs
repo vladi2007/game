@@ -6,10 +6,8 @@ using UnityEngine.UI;
 public class HealthPoint : MonoBehaviour
 {
     [SerializeField] int health = 100;
-
     player player;
     public Slider healthSl;
-
     void Update()
     {
         healthSl.value = health;

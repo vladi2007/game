@@ -6,8 +6,6 @@ public class bullet : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
-
-    
     public float destroyTime;
     void Start()
     {
@@ -16,23 +14,13 @@ public class bullet : MonoBehaviour
         Invoke("DestroyBullet",destroyTime);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector2.right *  speed * Time.deltaTime);
-    }
-
+    void Update() => transform.Translate(Vector2.right *  speed * Time.deltaTime);
     
-    void DestroyBullet()
-    {
+    void DestroyBullet() => Destroy(gameObject);
 
-         Destroy(gameObject);
-    }
     void OnTriggerEnter2D(Collider2D collider)
     {
         if (!collider.gameObject.tag.Equals("Player") && !collider.gameObject.tag.Equals("Enemy bullet"))
-        {
             Destroy(gameObject);
-        }
     }
 }

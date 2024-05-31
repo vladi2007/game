@@ -5,12 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int healthPoint = 100;
-
     player player;
-    void Start()
-    {
-        player = FindObjectOfType<player>();
-    }
+    void Start() => player = FindObjectOfType<player>();
 
     void Update()
     {
@@ -20,9 +16,7 @@ public class Enemy : MonoBehaviour
     }
 
     private void GoToPlayer()
-    {
-        
-        
+    {             
         if (transform.position.x < player.transform.position.x)
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         else

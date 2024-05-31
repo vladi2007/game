@@ -7,13 +7,9 @@ using UnityEngine.Animations;
 public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] float speed;
-
     Rigidbody2D rb;
-
     player target;
-        
     Vector2 moveDirection;
-
     public float destroyTime;
     void Start()
     {
@@ -24,12 +20,9 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject, destroyTime);
     }
 
-    // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.gameObject.tag.Equals("Enemy") && !other.gameObject.tag.Equals("Bullet") )
             Destroy(gameObject);
     }
-
-   
 }
