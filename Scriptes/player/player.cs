@@ -9,9 +9,8 @@ public class player : MonoBehaviour
     private Vector3 pos;
     Camera main;
     private Rigidbody2D rb;
-    [SerializeField] public  float speed = 3f;
+    float speed = 4f;
     [SerializeField] public  int HealthPoint = 100;
-    [SerializeField] public  float hitSpeed = 1f;
     [SerializeField] private  float jumpForce = 5f;
     private float movement;
     [SerializeField] private SpriteRenderer playerSprite;
