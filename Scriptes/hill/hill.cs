@@ -7,12 +7,12 @@ public class hill : MonoBehaviour
 {
     player player;
     void Start() => player = GameObject.FindObjectOfType<player>();
-
+    [SerializeField] int hillApple = 25;
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag.Equals("Player"))
         {
-            player.HealthPoint +=25;
+            player.HealthPoint +=hillApple;
             if (player.HealthPoint > 100)
                 player.HealthPoint = 100;
             Destroy(gameObject);

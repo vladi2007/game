@@ -9,7 +9,6 @@ public class NewBehaviourScript : MonoBehaviour
     public float StartTimeFire;
     private float TimeFire;
     void Start() => TimeFire = StartTimeFire;
-
     void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0))

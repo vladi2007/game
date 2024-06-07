@@ -9,8 +9,10 @@ public class player : MonoBehaviour
     private Vector3 pos;
     Camera main;
     private Rigidbody2D rb;
+    private Vector2 spawn = new Vector2(-22.87f,-5.71f);
     float speed = 4f;
     [SerializeField] public  int HealthPoint = 100;
+    [SerializeField] public  int damage = 25;
     [SerializeField] private  float jumpForce = 5f;
     private float movement;
     [SerializeField] private SpriteRenderer playerSprite;
@@ -43,10 +45,10 @@ public class player : MonoBehaviour
         pos = main.WorldToScreenPoint(transform.position);
         Move();
         Jump();
-        if (HealthPoint <=0)
-            Destroy(gameObject);
+        if (HealthPoint <=0)  
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
     }
-    void TakeDamage() => HealthPoint -=25;
+    void TakeDamage() => HealthPoint -= damage;
     private void OnCollisionEnter2D(Collision2D coll)
 	{
         if(coll.gameObject.tag == "Platforms")
@@ -58,9 +60,11 @@ public class player : MonoBehaviour
 		if(coll.gameObject.tag == "Platforms")
             rb.transform.parent = null;
 	}
+    
     void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag.Equals("Enemy bullet"))
             TakeDamage();
+        
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotatePlayer : MonoBehaviour
 {
     private Vector3 pos;
-     Camera main;
+    Camera main;
     void Start() => main = FindObjectOfType<Camera>();
     void Update()
     {

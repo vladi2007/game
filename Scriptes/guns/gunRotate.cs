@@ -6,7 +6,7 @@ using UnityEngine.Animations;
 
 public class gun : MonoBehaviour
 {
-     [SerializeField] float offSet;
+    [SerializeField] float offSet;
     void Update()
     {
         var mousePosition = Input.mousePosition;
